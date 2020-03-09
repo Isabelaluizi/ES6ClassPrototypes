@@ -4,20 +4,18 @@ class KayneQuote {
     }
 
     methodOne() {
-        //DO SOMETHING WITH THE QUOTE
+        return "hello1";
     }
 
     methodTwo() {
-        //DO SOMETHING WITH THE QUOTE
+        return "hello2";
     }
 
     methodThree() {
-        //DO SOMETHING WITH THE QUOTE
+        return "hello3";
     }
 }
 
-
-// MAKE AJAX REQUEST TO GET QUOTE
 // ON COMPLETE, CREATE A NEW OBJECT FROM THE CLASS
 // CALL YOUR THREE METHODS OF YOUR NEW OBJECT
 $.ajax({
@@ -31,7 +29,9 @@ $.ajax({
     }
 ).done(
     function (resultJson) {
-        console.log(resultJson.quote);
+        let kanyeQuote = new KayneQuote(resultJson.quote);
+        console.log(kanyeQuote.methodOne());
+        console.log(kanyeQuote.kanyeWisdom);
       }
 ).fail(
     function (xhr, status, error) {
