@@ -30,8 +30,9 @@ $.ajax({
 ).done(
     function (resultJson) {
         let kanyeQuote = new KayneQuote(resultJson.quote);
-        console.log(kanyeQuote.methodOne());
-        console.log(kanyeQuote.kanyeWisdom);
+        $("#container").after("<h1>" + kanyeQuote.methodOne() +"</h1>");
+        $("#container").after("<h1>" + kanyeQuote.methodTwo() +"</h1>");
+        $("#container").after("<h1>" + kanyeQuote.methodThree() +"</h1>");
       }
 ).fail(
     function (xhr, status, error) {
