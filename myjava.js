@@ -4,15 +4,15 @@ class KayneQuote {
     }
 
     methodOne() {
-        return "hello1";
+        return this.kanyeWisdom + "<br>" + "Hello";
     }
 
     methodTwo() {
-        return "hello2";
+        return "I am Isabela";
     }
 
     methodThree() {
-        return "hello3";
+        return  "And I am going to write after your quotes. Always.....";
     }
 }
 
@@ -30,9 +30,9 @@ $.ajax({
 ).done(
     function (resultJson) {
         let kanyeQuote = new KayneQuote(resultJson.quote);
-        $("#container").after("<h1>" + kanyeQuote.methodOne() +"</h1>");
-        $("#container").after("<h1>" + kanyeQuote.methodTwo() +"</h1>");
-        $("#container").after("<h1>" + kanyeQuote.methodThree() +"</h1>");
+        $("#container").append("<h1>" + kanyeQuote.methodOne() +"</h1>");
+        $("#container").append("<h1>" + kanyeQuote.methodTwo() +"</h1>");
+        $("#container").append("<h1>" + kanyeQuote.methodThree() +"</h1>");
       }
 ).fail(
     function (xhr, status, error) {
